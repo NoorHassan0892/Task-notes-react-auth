@@ -6,7 +6,7 @@ const Register = () => {
   const [userInfo, setUserInfo] = useState({});
 
   const { mutate } = useMutation({
-    mutationKey: ["regieter"],
+    mutationKey: ["register"],
     mutationFn: () => register(userInfo),
   });
 

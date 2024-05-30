@@ -16,6 +16,9 @@ const AddNote = ({ show, onClose, onSave }) => {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries(["notes"]);
+      setTitle("");
+      setTopics([]);
+      setBody("");
       onClose();
     },
   });
@@ -46,9 +49,6 @@ const AddNote = ({ show, onClose, onSave }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     addNote();
-    setTitle("");
-    setTopics([]);
-    setBody("");
   };
 
   if (!show) {
